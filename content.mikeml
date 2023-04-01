@@ -1,0 +1,9 @@
+<div>
+  <p>{{ data.title }}</p>
+  <p>{{ description|upper() }}</p>
+  <ul>
+    {{#each cats}}
+       <li>{{ name|capitalize() }}</li>
+    {{/each}}
+  </ul>
+</div>

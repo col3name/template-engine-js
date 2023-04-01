@@ -1,0 +1,28 @@
+  {{#block file="header.mikeml" data=header /}}
+
+  <h1>{{title}}</h1>
+  {{#block file="content.mikeml" data=someData /}}
+  <ul>
+    {{#each items}}
+      <li>
+        {{#include file="item.mikeml" /}}
+        {{#each images}}
+          <img src="{{ path }}" alt="{{alt}}">
+        {{/each}}
+        {{#if discount}}
+          <p>You have a {{ discount|format('USD') }}% discount!</p>
+        {{/if}}
+        {{#link }}
+          {{ link }}
+        {{/link }}
+        {{#link }}
+          {{ link }}
+        {{/link }}
+      </li>
+    {{/each}}
+  </ul>
+  {{#if discount}}
+    <p>You have a {{discount}}% discount!</p>
+  {{/if}}
+  {{#block file="footer.mikeml" data=footer /}}
+<!--  {{#block file="footer.html" data=footer /}}-->
